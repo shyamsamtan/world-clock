@@ -419,8 +419,8 @@
       const card = document.getElementById("card-" + code);
       if (!card) return;
       const cardClass = phaseLabel(hour).toLowerCase();
-      card.removeClass("morning day evening night");
-      card.addClass(cardClass);
+      card.classList.remove("morning", "day", "evening", "night");
+      card.classList.add(cardClass);
 
       document.getElementById("time-" + code).innerHTML =
         `${String(hour).padStart(2, "0")}:${minute}<span>${second}</span>`;
