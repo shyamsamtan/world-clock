@@ -16,6 +16,8 @@
     --periwinkle: #8C9AF8;
     --slate: #8B90A8;
     --panel: #1B2038;
+    --evening: #d58b0d;
+    --morning: #4fa9f3;
   }
 
   * { box-sizing: border-box; }
@@ -205,7 +207,9 @@
   .country { font-size: 12px; opacity: 0.55; margin-top: 3px; }
 
   .phase-dot { width: 9px; height: 9px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+  .card.morning .phase-dot { background: var(--morning); }
   .card.day .phase-dot { background: var(--amber); }
+  .card.evening .phase-dot { background: var(--evening); }
   .card.night .phase-dot { background: var(--periwinkle); }
 
   .time {
@@ -401,7 +405,7 @@
 
   function phaseLabel(hour) {
     if (hour >= 5 && hour < 12) return "Morning";
-    if (hour >= 12 && hour < 17) return "Afternoon";
+    if (hour >= 12 && hour < 17) return "Day";
     if (hour >= 17 && hour < 20) return "Evening";
     return "Night";
   }
